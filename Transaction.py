@@ -1,5 +1,6 @@
 import uuid
 import time
+import copy
 
 class Transaction():
     
@@ -17,3 +18,11 @@ class Transaction():
     
     def sign(self, signature):
         self.signature = signature
+        
+    # Make the validate signature consistent
+    def payload(self):
+        # copy the json 
+        jsonRepresentation = copy.deepcopy(self.toJson())
+        jsonRepresentation['signature'] = ''
+        return jsonRepresentation
+        
