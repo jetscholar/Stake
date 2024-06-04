@@ -21,3 +21,4 @@ Date | Work done | Next Step | Version
 -----|-----------|-----------|--------
 01/06/24 | Repo and IDE setup | Tx | 0.1.0
 02/06/24 | Transaction class completed | Wallet | 0.1.1
+04/06/24 | Wallet and Utilities | TransactionPool | 0.1.2
