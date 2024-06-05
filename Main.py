@@ -2,7 +2,11 @@ from Transaction import Transaction
 from Wallet import Wallet
 from TransactionPool import TransactionPool
 from Block import Block
+from Blockchain import Blockchain
+from BlockchainUtils import BlockchainUtils
 import pprint
+
+
 
 printer = pprint.PrettyPrinter()
 
@@ -50,12 +54,31 @@ if __name__ == '__main__':
     
     # printer.pprint(block.toJson())
     
-    block = wallet.createBlock(pool.transactions, 'lastHash', 1)
+    blockchain = Blockchain()
+    
+    lastHash = BlockchainUtils.hash(blockchain.blocks[-1].payload()).hexdigest()
+    blockCount = blockchain.blocks[-1].blockCount +1
+    
+    block = wallet.createBlock(pool.transactions, lastHash, blockCount)
+    
+    if not blockchain.lastBlockHashValid(block):
+        print('lastBlockHash is not valid')
+        
+    if not blockchain.blockCountValid(block):
+        print('Blockcount is not valid')
+        
+    if blockchain.lastBlockHashValid(block) and blockchain.blockCountValid(block):
+        blockchain.addBlock(block)
     
     # printer.pprint(block.toJson())
     
     # print(block.toJson())
-    signatureValid = Wallet.signatureValid(block.payload(), block.signature, wallet.publicKeyString())
+    # signatureValid = Wallet.signatureValid(block.payload(), block.signature, wallet.publicKeyString())
     
-    print(signatureValid)
+    # print(signatureValid)
+    
+    
+    # blockchain.addBlock(block)
+    printer.pprint(blockchain.toJson())
+    
     
