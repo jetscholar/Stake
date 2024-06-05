@@ -26,3 +26,8 @@ class Transaction():
         jsonRepresentation['signature'] = ''
         return jsonRepresentation
         
+    def equals(self, transaction):
+        if self.id == transaction.id:
+            return True
+        else:
+            return False
