@@ -16,8 +16,9 @@
 - [x] Make the TransactionPool class
 - [x] Make the Block class
 - [x] Make the Blockchain class
-- [ ] AccountModel class
-- [ ] Node class
+- [x] AccountModel class
+- [x] Node class
+- [ ] Peer to Peer
 
 ### Worklog
 

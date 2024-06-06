@@ -5,6 +5,8 @@ from Block import Block
 from Blockchain import Blockchain
 from BlockchainUtils import BlockchainUtils
 from AccountModel import AccountModel
+from Node import Node
+import sys
 import pprint
 
 
@@ -13,44 +15,59 @@ printer = pprint.PrettyPrinter()
 
 if __name__ == '__main__':
     
-    blockchain = Blockchain()
-    pool = TransactionPool()
+    ip = sys.argv[1]
+    port = int(sys.argv[2])
     
-    alice = Wallet()
-    bob = Wallet()
-    exchange = Wallet()
-    forger = Wallet()
+    node = Node(ip, port)
+    node.startP2P()
     
-    exchangeTransaction = exchange.createTransaction(alice.publicKeyString(), 10, 'EXCHANGE')
+    if port == 10002:
+        node.p2p.connect_with_node('localhost', 10001)
+
     
-    if not pool.transactionExists(exchangeTransaction):
-        pool.addTransaction(exchangeTransaction)
+    
+    
+    
+    
+    
+#     blockchain = Blockchain()
+#     pool = TransactionPool()
+    
+#     alice = Wallet()
+#     bob = Wallet()
+#     exchange = Wallet()
+#     forger = Wallet()
+    
+#     exchangeTransaction = exchange.createTransaction(alice.publicKeyString(), 10, 'EXCHANGE')
+    
+#     if not pool.transactionExists(exchangeTransaction):
+#         pool.addTransaction(exchangeTransaction)
     
         
-    coveredTransaction = blockchain.getCoveredTranasctionSet(pool.transactions)
-    lastHash = BlockchainUtils.hash(blockchain.blocks[-1].payload()).hexdigest()
-    blockCount = blockchain.blocks[-1].blockCount + 1
-    # blockOne = Block(coveredTransaction, lastHash, forger.publicKeyString(), blockCount)
-    blockOne = forger.createBlock(coveredTransaction, lastHash, blockCount)
-    blockchain.addBlock(blockOne)
-    pool.removeFromPool(blockOne.transactions)
+#     coveredTransaction = blockchain.getCoveredTranasctionSet(pool.transactions)
+#     lastHash = BlockchainUtils.hash(blockchain.blocks[-1].payload()).hexdigest()
+#     blockCount = blockchain.blocks[-1].blockCount + 1
+#     # blockOne = Block(coveredTransaction, lastHash, forger.publicKeyString(), blockCount)
+#     blockOne = forger.createBlock(coveredTransaction, lastHash, blockCount)
+#     blockchain.addBlock(blockOne)
+#     pool.removeFromPool(blockOne.transactions)
     
-    # alice sends 5 token to bob
-    transaction = alice.createTransaction(bob.publicKeyString(), 5, 'TRANSFER')
+#     # alice sends 5 token to bob
+#     transaction = alice.createTransaction(bob.publicKeyString(), 5, 'TRANSFER')
     
-    if not pool.transactionExists(transaction):
-        pool.addTransaction(transaction)
+#     if not pool.transactionExists(transaction):
+#         pool.addTransaction(transaction)
         
-    coveredTransaction = blockchain.getCoveredTranasctionSet(pool.transactions)
-    lastHash = BlockchainUtils.hash(blockchain.blocks[-1].payload()).hexdigest()
-    blockCount = blockchain.blocks[-1].blockCount + 1
-    # blockTwo = Block(coveredTransaction, lastHash, forger.publicKeyString(), blockCount)
-    blockTwo = forger.createBlock(coveredTransaction, lastHash, blockCount)
-    blockchain.addBlock(blockTwo)    
-    pool.removeFromPool(blockTwo.transactions)
+#     coveredTransaction = blockchain.getCoveredTranasctionSet(pool.transactions)
+#     lastHash = BlockchainUtils.hash(blockchain.blocks[-1].payload()).hexdigest()
+#     blockCount = blockchain.blocks[-1].blockCount + 1
+#     # blockTwo = Block(coveredTransaction, lastHash, forger.publicKeyString(), blockCount)
+#     blockTwo = forger.createBlock(coveredTransaction, lastHash, blockCount)
+#     blockchain.addBlock(blockTwo)    
+#     pool.removeFromPool(blockTwo.transactions)
     
     
-    printer.pprint(blockchain.toJson())
+#     printer.pprint(blockchain.toJson())
     
     
     #print(coveredTransaction)
