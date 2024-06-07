@@ -33,4 +33,5 @@ Date | Work done | Next Step | Version
 05/06/24 | Blockchain class | Account Model | 0.1.4
 06/06/24 | AccountModel class | Node class | 0.1.5
 07/06/24 | Peer communciation complete | Rest API | 0.1.6
+08/06/24 | Begin Flask API | More endpoints | 0.1.7
 
