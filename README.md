@@ -19,7 +19,7 @@
 - [x] AccountModel class
 - [x] Node class
 - [x] Peer to Peer
-- [ ] Rest Api
+- [x] Rest Api
 - [ ] Proof of Stake
 
 ### Worklog
@@ -34,4 +34,5 @@ Date | Work done | Next Step | Version
 06/06/24 | AccountModel class | Node class | 0.1.5
 07/06/24 | Peer communciation complete | Rest API | 0.1.6
 08/06/24 | Begin Flask API | More endpoints | 0.1.7
+08/06/24 | API working | Proof of Stake Algorithm | 0.1.8
 
