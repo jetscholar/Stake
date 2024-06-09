@@ -35,4 +35,5 @@ Date | Work done | Next Step | Version
 07/06/24 | Peer communciation complete | Rest API | 0.1.6
 08/06/24 | Begin Flask API | More endpoints | 0.1.7
 08/06/24 | API working | Proof of Stake Algorithm | 0.1.8
+09/06/24 | Built the ProofOfStake class | Build the Lot class | 0.1.9
 
