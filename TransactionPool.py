@@ -29,8 +29,9 @@ class TransactionPool():
     def forgerRequired(self):
         '''
             Provides a mechanism to select forger
+            length of transaction block(# of txs)currently 3
         '''
-        if len(self.transactions) >= 1:
+        if len(self.transactions) >= 3:
             return True
         else:
             return False

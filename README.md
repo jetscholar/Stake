@@ -37,4 +37,5 @@ Date | Work done | Next Step | Version
 08/06/24 | API working | Proof of Stake Algorithm | 0.1.8
 09/06/24 | Built the ProofOfStake class | Build the Lot class | 0.1.9
 10/06/24 | Forging working | forging blocks | 0.1.10
+11/06/24 | Course Completed | Start Frontend Dev | 0.1.11
 
