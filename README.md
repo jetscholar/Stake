@@ -20,7 +20,8 @@
 - [x] Node class
 - [x] Peer to Peer
 - [x] Rest Api
-- [ ] Proof of Stake
+- [x] Proof of Stake
+- [ ] Front end dev - lots of things to do here
 
 ### Worklog
 
@@ -38,4 +39,4 @@ Date | Work done | Next Step | Version
 09/06/24 | Built the ProofOfStake class | Build the Lot class | 0.1.9
 10/06/24 | Forging working | forging blocks | 0.1.10
 11/06/24 | Course Completed | Start Frontend Dev | 0.1.11
-
+15/02/25 | Project Reboot | Gettings things working again | 0.1.12

@@ -13,11 +13,16 @@ class NodeAPI(FlaskView):
         
     def start(self, apiPort):
         NodeAPI.register(self.app, route_base='/')    
-        self.app.run(host = 'localhost', port=apiPort)
+        self.app.run(host = '0.0.0.0', port=apiPort)
 
     def injectNode(self, injectedNode):
         global node
         node = injectedNode
+        
+    @route("/", methods=["GET"])
+    def home(self):
+        return jsonify({"message": "Welcome to the Stake Blockchain API"}), 200
+
         
     @route('/info', methods=['GET'])
     def info(self):
