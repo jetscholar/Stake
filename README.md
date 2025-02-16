@@ -10,8 +10,8 @@
 
 ### Virtual Environment Activation
 
-- source venv/bin/activate
-- venv\Script\Activate
+- source venv/bin/activate - linux/mac
+- venv\Script\Activate - windows
 
 ### Roadmap
 
