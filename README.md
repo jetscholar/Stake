@@ -8,6 +8,11 @@
 
 [def1]: https://www.udemy.com/course/build-your-own-proof-of-stake-blockchain/learn/lecture/23315256#overview
 
+### Virtual Environment Activation
+
+- source venv/bin/activate
+- venv\Script\Activate
+
 ### Roadmap
 
 - [x] Setup repo and IDE
@@ -40,3 +45,4 @@ Date | Work done | Next Step | Version
 10/06/24 | Forging working | forging blocks | 0.1.10
 11/06/24 | Course Completed | Start Frontend Dev | 0.1.11
 15/02/25 | Project Reboot | Gettings things working again | 0.1.12
+17/02/25 | Added CLI function | setup frontend | 0.1.13
