@@ -1,0 +1,30 @@
+.
+├── AccountModel.py
+├── Blockchain.py
+├── BlockchainUtils.py
+├── Block.py
+├── .DS_Store
+├── .gitignore
+├── Interaction.py
+├── keys
+│   ├── genesisPrivateKey.pem
+│   ├── genesisPublicKey.pem
+│   └── stakerPrivateKey.pem
+├── Lot.py
+├── Main.py
+├── Message.py
+├── NodeAPI.py
+├── Node.py
+├── PeerDiscoveryHandler.py
+├── project_structure.txt
+├── ProofOfStake.py
+├── README.md
+├── requirements.txt
+├── SocketCommunication.py
+├── SocketConnector.py
+├── Test.py
+├── TransactionPool.py
+├── Transaction.py
+└── Wallet.py
+
+2 directories, 26 files

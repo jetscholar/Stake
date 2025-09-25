@@ -85,3 +85,8 @@ cython_debug/
 
 # VS Code
 .vscode/
+
+# Security
+keys/
+*.pem
+
